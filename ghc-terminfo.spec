@@ -9,6 +9,7 @@ Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkg
 # Source0-md5:	5840d32cc06109d23ebda5509fb242a9
 URL:		http://hackage.haskell.org/package/%{pkgname}/
 BuildRequires:	ghc >= 6.10
+BuildRequires:	gmp-devel
 BuildRequires:	ncurses-devel
 %requires_eq	ghc
 Requires:	ncurses-devel
@@ -17,10 +18,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		libsubdir	ghc-%(/usr/bin/ghc --numeric-version)/%{pkgname}-%{version}
 
 %description
-This library provides an interface to the terminfo database
-(via bindings to the curses library). Terminfo allows POSIX
-systems to interact with a variety of terminals using
-a standard set of capabilities. 
+This library provides an interface to the terminfo database (via
+bindings to the curses library). Terminfo allows POSIX systems to
+interact with a variety of terminals using a standard set of
+capabilities.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
