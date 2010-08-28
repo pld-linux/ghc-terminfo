@@ -11,7 +11,7 @@ URL:		http://hackage.haskell.org/package/%{pkgname}/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	gmp-devel
 BuildRequires:	ncurses-devel
-%requires_eq	ghc
+%requires_releq	ghc
 Requires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
