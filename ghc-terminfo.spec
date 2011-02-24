@@ -1,4 +1,4 @@
-%define	pkgname	terminfo
+%define		pkgname	terminfo
 Summary:	Haskell bindings to the terminfo library
 Name:		ghc-%{pkgname}
 Version:	0.3.1.3
@@ -7,15 +7,14 @@ License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
 # Source0-md5:	8c0e052340f628b76f5687fa23379628
-URL:		http://hackage.haskell.org/package/%{pkgname}/
+URL:		http://hackage.haskell.org/package/terminfo/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	gmp-devel
 BuildRequires:	ncurses-devel
+BuildRequires:	rpmbuild(macros) >= 1.608
 %requires_releq	ghc
 Requires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		ghcdir		ghc-%(/usr/bin/ghc --numeric-version)
 
 %description
 This library provides an interface to the terminfo database (via
@@ -54,10 +53,10 @@ runhaskell Setup.lhs register \
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/bin/ghc-pkg recache
+%ghc_pkg_recache
 
 %postun
-/usr/bin/ghc-pkg recache
+%ghc_pkg_recache
 
 %files
 %defattr(644,root,root,755)
