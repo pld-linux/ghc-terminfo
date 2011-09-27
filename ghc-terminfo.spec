@@ -6,7 +6,7 @@ Release:	1
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	8c0e052340f628b76f5687fa23379628
+# Source0-md5:	b93e47791354d25ce89fbbcd12a3c209
 URL:		http://hackage.haskell.org/package/terminfo/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	gmp-devel
