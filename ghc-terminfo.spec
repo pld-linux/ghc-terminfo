@@ -1,8 +1,8 @@
 %define		pkgname	terminfo
 Summary:	Haskell bindings to the terminfo library
 Name:		ghc-%{pkgname}
-Version:	0.3.1.3
-Release:	4
+Version:	0.3.2.2
+Release:	1
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
