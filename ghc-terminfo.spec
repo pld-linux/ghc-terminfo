@@ -1,12 +1,12 @@
 %define		pkgname	terminfo
 Summary:	Haskell bindings to the terminfo library
 Name:		ghc-%{pkgname}
-Version:	0.3.2.2
+Version:	0.3.2.5
 Release:	1
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	b93e47791354d25ce89fbbcd12a3c209
+# Source0-md5:	7ef09acfac9f6fc499ed3bb804ae2ab3
 URL:		http://hackage.haskell.org/package/terminfo/
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	gmp-devel
@@ -57,8 +57,9 @@ install -d $RPM_BUILD_ROOT%{_libdir}/%{ghcdir}/package.conf.d
 runhaskell Setup.lhs copy --destdir=$RPM_BUILD_ROOT
 
 # work around automatic haddock docs installation
-rm -rf %{name}-%{version}-doc
+%{__rm} -rf %{name}-%{version}-doc
 cp -a $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/html %{name}-%{version}-doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/html %{name}-%{version}-doc
 
 runhaskell Setup.lhs register \
 	--gen-pkg-config=$RPM_BUILD_ROOT/%{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
